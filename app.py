@@ -33,117 +33,59 @@ def read_readme():
 INSTRUCTION_TEMPLATES = {
 ################# PODCAST ##################
     "podcast": {
-        "intro": """Your task is to take the input text provided and turn it into an lively, engaging, informative podcast dialogue, in the style of NPR. The input text may be messy or unstructured, as it could come from a variety of sources like PDFs or web pages. 
+        "intro": """Your task is to take the input text provided which contains graph images and urls and turn it into an lively, engaging, informative TEDTalk podcast dialogue, in the style of Carl Sagan/Atul Gawande/NPR. The input text may be messy or unstructured, as it could come from a variety of sources like images or code or web pages. 
 
 Don't worry about the formatting issues or any irrelevant information; your goal is to extract the key points, identify definitions, and interesting facts that could be discussed in a podcast. 
 
 Define all terms used carefully for a broad audience of listeners.
 """,
-        "text_instructions": "First, carefully read through the input text and identify the main topics, key points, and any interesting facts or anecdotes. Think about how you could present this information in a fun, engaging way that would be suitable for a high quality presentation.",
+        "text_instructions": "First, carefully read through the input text which contains graph images and urls, then identify the main topics, key points, and any interesting facts or anecdotes. Think about how you could present this information in a fun, engaging way that would be suitable for a high quality presentation. First explain the original research briefly with its hypothesis, conclusion and results, then explain the dataset’s important facts and facets, finally explain what the goal of the new research was and why it was important.",
         "scratch_pad": """Brainstorm creative ways to discuss the main topics and key points you identified in the input text. Consider using analogies, examples, storytelling techniques, or hypothetical scenarios to make the content more relatable and engaging for listeners.
 
 Keep in mind that your podcast should be accessible to a general audience, so avoid using too much jargon or assuming prior knowledge of the topic. If necessary, think of ways to briefly explain any complex concepts in simple terms.
 
 Use your imagination to fill in any gaps in the input text or to come up with thought-provoking questions that could be explored in the podcast. The goal is to create an informative and entertaining dialogue, so feel free to be creative in your approach.
 
-Define all terms used clearly and spend effort to explain the background.
+Define all terms used clearly and spend effort to explain the background. Finally, discuss how the new research can be extended, raise ideas to improve the data quality, diversity and distribution.
 
-Write your brainstorming ideas and a rough outline for the podcast dialogue here. Be sure to note the key insights and takeaways you want to reiterate at the end.
-
-Make sure to make it fun and exciting. 
+Write your brainstorming ideas and a rough outline for the podcast dialogue here. Be sure to note the key insights and takeaways you want to reiterate at the end. Make sure to make it fun and exciting. Revisit our ideas and iterate over them, be critical of your own ideas, and improve them with reasoning and chain of thought.
 """,
-        "prelude": """Now that you have brainstormed ideas and created a rough outline, it's time to write the actual podcast dialogue. Aim for a natural, conversational flow between the host and any guest speakers. Incorporate the best ideas from your brainstorming session and make sure to explain any complex topics in an easy-to-understand way.
-""",
-        "dialog": """Write a very long, engaging, informative podcast dialogue here, based on the key points and creative ideas you came up with during the brainstorming session. Use a conversational tone and include any necessary context or explanations to make the content accessible to a general audience. 
+        "prelude": """Now that you have brainstormed ideas and created a rough outline, it's time to write the actual podcast dialogue. Aim for a natural, conversational flow between the host and any guest speakers. Incorporate the best ideas from your brainstorming session and make sure to explain any complex topics in an easy-to-understand way. Make the audience hooked into the conversation, by building the narrative in the form of a story. Make it resonate with the audience and make them feel empathetic for the goal of the new research and its novel but noble thought.""",
+        "dialog": """Write a very long, engaging, informative podcast dialogue here, based on the key points and creative ideas you came up with during the brainstorming session. Introduce the guest speaker, the central idea of their new research and why its important. Use a conversational tone and include any necessary context or explanations to make the content accessible to a general audience. 
 
-Never use made-up names for the hosts and guests, but make it an engaging and immersive experience for listeners. Do not include any bracketed placeholders like [Host] or [Guest]. Design your output to be read aloud -- it will be directly converted into audio.
+Never use made-up names for the hosts and guests, but make it an engaging and immersive experience for listeners. Do not include any bracketed placeholders like [Host] or [Guest]. Design your output to be read aloud -- it will be directly converted into audio. Make the guest speaker sound like a real life high school junior boy, who is excited about his research and being on this podcast. Use a bit of an Indian accent.
 
 Make the dialogue as long and detailed as possible, while still staying on topic and maintaining an engaging flow. Aim to use your full output capacity to create the longest podcast episode you can, while still communicating the key information from the input text in an entertaining way.
 
-At the end of the dialogue, have the host and guest speakers naturally summarize the main insights and takeaways from their discussion. This should flow organically from the conversation, reiterating the key points in a casual, conversational manner. Avoid making it sound like an obvious recap - the goal is to reinforce the central ideas one last time before signing off. 
-
-The podcast should have around 20000 words.
+At the end of the dialogue, have the host and guest speakers naturally summarize the main insights and takeaways from their discussion. This should flow organically from the conversation, reiterating the key points in a casual, conversational manner. Avoid making it sound like an obvious recap - the goal is to reinforce the central ideas one last time before signing off. The podcast should have around 20000 words.
 """,
-    },
-################# MATERIAL DISCOVERY SUMMARY ##################
-    "SciAgents material discovery summary": {
-        "intro": """Your task is to take the input text provided and turn it into a lively, engaging conversation between a professor and a student in a panel discussion that describes a new material. The professor acts like Richard Feynman, but you never mention the name.
-
-The input text is the result of a design developed by SciAgents, an AI tool for scientific discovery that has come up with a detailed materials design.
-
-Don't worry about the formatting issues or any irrelevant information; your goal is to extract the key points, identify definitions, and interesting facts that could be discussed in a podcast.
-
-Define all terms used carefully for a broad audience of listeners.
-""",
-        "text_instructions": "First, carefully read through the input text and identify the main topics, key points, and any interesting facts or anecdotes. Think about how you could present this information in a fun, engaging way that would be suitable for a high quality presentation.",
-        "scratch_pad": """Brainstorm creative ways to discuss the main topics and key points you identified in the material design summary, especially paying attention to design features developed by SciAgents. Consider using analogies, examples, storytelling techniques, or hypothetical scenarios to make the content more relatable and engaging for listeners.
-
-Keep in mind that your description should be accessible to a general audience, so avoid using too much jargon or assuming prior knowledge of the topic. If necessary, think of ways to briefly explain any complex concepts in simple terms.
-
-Use your imagination to fill in any gaps in the input text or to come up with thought-provoking questions that could be explored in the podcast. The goal is to create an informative and entertaining dialogue, so feel free to be creative in your approach.
-
-Define all terms used clearly and spend effort to explain the background.
-
-Write your brainstorming ideas and a rough outline for the podcast dialogue here. Be sure to note the key insights and takeaways you want to reiterate at the end.
-
-Make sure to make it fun and exciting. You never refer to the podcast, you just discuss the discovery and you focus on the new material design only.
-""",
-        "prelude": """Now that you have brainstormed ideas and created a rough outline, it's time to write the actual podcast dialogue. Aim for a natural, conversational flow between the host and any guest speakers. Incorporate the best ideas from your brainstorming session and make sure to explain any complex topics in an easy-to-understand way.
-""",
-        "dialog": """Write a very long, engaging, informative dialogue here, based on the key points and creative ideas you came up with during the brainstorming session. The presentation must focus on the novel aspects of the material design, behavior, and all related aspects.
-
-Use a conversational tone and include any necessary context or explanations to make the content accessible to a general audience, but make it detailed, logical, and technical so that it has all necessary aspects for listeners to understand the material and its unexpected properties.
-
-Remember, this describes a design developed by SciAgents, and this must be explicitly stated for the listeners.
-
-Never use made-up names for the hosts and guests, but make it an engaging and immersive experience for listeners. Do not include any bracketed placeholders like [Host] or [Guest]. Design your output to be read aloud -- it will be directly converted into audio.
-
-Make the dialogue as long and detailed as possible with great scientific depth, while still staying on topic and maintaining an engaging flow. Aim to use your full output capacity to create the longest podcast episode you can, while still communicating the key information from the input text in an entertaining way.
-
-At the end of the dialogue, have the host and guest speakers naturally summarize the main insights and takeaways from their discussion. This should flow organically from the conversation, reiterating the key points in a casual, conversational manner. Avoid making it sound like an obvious recap - the goal is to reinforce the central ideas one last time before signing off.
-
-The conversation should have around 20000 words.
-"""
     },
 ################# LECTURE ##################
     "lecture": {
-        "intro": """You are Professor Richard Feynman. Your task is to develop a script for a lecture. You never mention your name.
+        "intro": """Your task is to take the input text provided which contains graph images and urls and turn it into an lively, engaging, informative lecture, in the style of Professor Carl Sagan from Stanford. The input text may be messy or unstructured, as it could come from a variety of sources like images or web pages. 
 
-The material covered in the lecture is based on the provided text. 
+Don't worry about the formatting issues or any irrelevant information; your goal is to extract the key points, identify definitions, and interesting facts that could be described in a lecture. 
 
-Don't worry about the formatting issues or any irrelevant information; your goal is to extract the key points, identify definitions, and interesting facts that need to be covered in the lecture. 
-
-Define all terms used carefully for a broad audience of students.
+Define all terms used carefully for a broad audience of listeners.
 """,
-        "text_instructions": "First, carefully read through the input text and identify the main topics, key points, and any interesting facts or anecdotes. Think about how you could present this information in a fun, engaging way that would be suitable for a high quality presentation.",
-        "scratch_pad": """
-Brainstorm creative ways to discuss the main topics and key points you identified in the input text. Consider using analogies, examples, storytelling techniques, or hypothetical scenarios to make the content more relatable and engaging for listeners.
+        "text_instructions": "First, carefully read through the input text which contains graph images and urls, then identify the main topics, key points, and any interesting facts or anecdotes. Think about how you could present this information in a fun, engaging way that would be suitable for a high quality presentation. First explain the original research briefly with its hypothesis, conclusion and results, then explain the dataset’s important facts and facets, finally explain what the goal of the new research was and why it was important.",
+        "scratch_pad": """Brainstorm creative ways to discuss the main topics and key points you identified in the input text. Consider using analogies, examples, storytelling techniques, or hypothetical scenarios to make the content more relatable and engaging for listeners.
 
 Keep in mind that your lecture should be accessible to a general audience, so avoid using too much jargon or assuming prior knowledge of the topic. If necessary, think of ways to briefly explain any complex concepts in simple terms.
 
-Use your imagination to fill in any gaps in the input text or to come up with thought-provoking questions that could be explored in the podcast. The goal is to create an informative and entertaining dialogue, so feel free to be creative in your approach.
+Use your imagination to fill in any gaps in the input text or to come up with thought-provoking questions that could be explored in the lecture. The goal is to create an informative and entertaining dialogue, so feel free to be creative in your approach.
 
-Define all terms used clearly and spend effort to explain the background.
-
-Write your brainstorming ideas and a rough outline for the lecture here. Be sure to note the key insights and takeaways you want to reiterate at the end.
-
-Make sure to make it fun and exciting. 
+Define all terms used clearly and spend effort to explain the background. Finally, discuss how the new research can be extended, raise ideas to improve the data quality, diversity and distribution.
+Write your brainstorming ideas and a rough outline for the lecture script here. Be sure to note the key insights and takeaways you want to reiterate at the end. Make sure to make it fun and exciting. Revisit our ideas and iterate over them, be critical of your own ideas, and improve them with reasoning and chain of thought.
 """,
-        "prelude": """Now that you have brainstormed ideas and created a rough outline, it's time to write the actual podcast dialogue. Aim for a natural, conversational flow between the host and any guest speakers. Incorporate the best ideas from your brainstorming session and make sure to explain any complex topics in an easy-to-understand way.
-""",
-        "dialog": """Write a very long, engaging, informative script here, based on the key points and creative ideas you came up with during the brainstorming session. Use a conversational tone and include any necessary context or explanations to make the content accessible to the students.
+        "prelude": """Now that you have brainstormed ideas and created a rough outline, it's time to write the actual lecture script. Aim for a natural, conversational flow between the audience and any guest speakers. Incorporate the best ideas from your brainstorming session and make sure to explain any complex topics in an easy-to-understand way. Make the audience hooked into the conversation, by building the narrative in the form of a story. Make it resonate with the audience and make them feel empathetic for the goal of the new research and its novel but noble thought.""",
+        "dialog": """Write a very long, engaging, informative lecture script here, based on the key points and creative ideas you came up with during the brainstorming session. Introduce the guest speaker, the central idea of their new research and why its important. Use a conversational tone and include any necessary context or explanations to make the content accessible to a general audience. 
 
-Include clear definitions and terms, and examples. 
+Never use made-up names for the hosts and guests, but make it an engaging and immersive experience for listeners. Do not include any bracketed placeholders like [Host] or [Guest]. Design your output to be read aloud -- it will be directly converted into audio. Use a bit of an Indian accent or voice for the Guest.
 
-Do not include any bracketed placeholders like [Host] or [Guest]. Design your output to be read aloud -- it will be directly converted into audio.
+Make the dialogue as long and detailed as possible, while still staying on topic and maintaining an engaging flow. Aim to use your full output capacity to create the longest lecture you can, while still communicating the key information from the input text in an entertaining way.
 
-There is only one speaker, you, the professor. Stay on topic and maintaining an engaging flow. Aim to use your full output capacity to create the longest lecture you can, while still communicating the key information from the input text in an engaging way.
-
-At the end of the lecture, naturally summarize the main insights and takeaways from the lecture. This should flow organically from the conversation, reiterating the key points in a casual, conversational manner. 
-
-Avoid making it sound like an obvious recap - the goal is to reinforce the central ideas covered in this lecture one last time before class is over. 
-
-The lecture should have around 20000 words.
+At the end of the dialogue, have the guest speakers naturally summarize the main insights and takeaways from their discussion. This should flow organically from the conversation, reiterating the key points in a casual, conversational manner. Avoid making it sound like an obvious recap - the goal is to reinforce the central ideas one last time before signing off. The lecture should have around 20000 words.
 """,
     },
 ################# SUMMARY ##################
@@ -246,6 +188,7 @@ from tenacity import retry, retry_if_exception_type
 
 # Define standard values
 STANDARD_TEXT_MODELS = [
+    "o1-2024-12-17",
     "o1-preview-2024-09-12",
     "o1-preview",
     "gpt-4o-2024-08-06",
