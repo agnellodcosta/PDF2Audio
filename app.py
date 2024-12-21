@@ -446,7 +446,7 @@ with gr.Blocks(title="PDF to Audio", css="""
 
     with gr.Row(elem_id="main_container"):
         with gr.Column(scale=2):
-            files = gr.Files(label="PDFs", file_types=["pdf"], )
+            files = gr.Files()
             
             openai_api_key = gr.Textbox(
                 label="OpenAI API Key",
